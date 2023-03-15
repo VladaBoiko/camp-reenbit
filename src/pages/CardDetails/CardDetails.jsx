@@ -20,16 +20,17 @@ import {
 } from './CardDetails.styled';
 export default function CardDetail() {
   const { id } = useParams();
+  localStorage.setItem('id', id);
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/';
   const dispatch = useDispatch();
   const { item } = useSelector(getCharacterById);
   useEffect(() => {
-    if (id === '') {
+    if (localStorage.getItem('id') === '') {
       return;
     }
-    dispatch(fetchCharacterById(id));
-  }, [dispatch, id]);
+    dispatch(fetchCharacterById(localStorage.getItem('id')));
+  }, [dispatch]);
   let imgPath = null;
   if (!item.image) {
     imgPath =
