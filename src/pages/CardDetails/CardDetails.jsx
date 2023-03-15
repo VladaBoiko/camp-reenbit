@@ -20,18 +20,20 @@ import {
 } from './CardDetails.styled';
 export default function CardDetail() {
   const { id } = useParams();
-  console.log(id);
+  const currentId = id;
+  localStorage.setItem('id', currentId);
+
+  console.log(localStorage.getItem('id'));
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/';
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (id === '') {
+    if (localStorage.getItem('id') === '') {
       return;
     }
-    dispatch(fetchCharacterById(id));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [id]);
+    dispatch(fetchCharacterById(localStorage.getItem('id')));
+  }, [dispatch, id]);
   const { item } = useSelector(getCharacterById);
   let imgPath = null;
   if (!item.image) {
