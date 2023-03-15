@@ -12,7 +12,7 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <BrowserRouter basename="https://github.com/VladaBoiko/camp-reenbit/">
+        <BrowserRouter basename="/camp-reenbit/">
           <App />
         </BrowserRouter>
       </PersistGate>
