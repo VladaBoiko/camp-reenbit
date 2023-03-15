@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/camp-reenbit/static/css/main.e31c9e88.css",
-    "main.js": "/camp-reenbit/static/js/main.58bc5e1b.js",
+    "main.js": "/camp-reenbit/static/js/main.de278de2.js",
     "static/js/391.3c5c1e9d.chunk.js": "/camp-reenbit/static/js/391.3c5c1e9d.chunk.js",
     "static/js/725.56d6cc69.chunk.js": "/camp-reenbit/static/js/725.56d6cc69.chunk.js",
     "static/js/787.085cb54c.chunk.js": "/camp-reenbit/static/js/787.085cb54c.chunk.js",
@@ -11,7 +11,7 @@
     "static/media/ready.png": "/camp-reenbit/static/media/ready.df946016842b719577a0.png",
     "index.html": "/camp-reenbit/index.html",
     "main.e31c9e88.css.map": "/camp-reenbit/static/css/main.e31c9e88.css.map",
-    "main.58bc5e1b.js.map": "/camp-reenbit/static/js/main.58bc5e1b.js.map",
+    "main.de278de2.js.map": "/camp-reenbit/static/js/main.de278de2.js.map",
     "391.3c5c1e9d.chunk.js.map": "/camp-reenbit/static/js/391.3c5c1e9d.chunk.js.map",
     "725.56d6cc69.chunk.js.map": "/camp-reenbit/static/js/725.56d6cc69.chunk.js.map",
     "787.085cb54c.chunk.js.map": "/camp-reenbit/static/js/787.085cb54c.chunk.js.map",
@@ -20,6 +20,6 @@
   },
   "entrypoints": [
     "static/css/main.e31c9e88.css",
-    "static/js/main.58bc5e1b.js"
+    "static/js/main.de278de2.js"
   ]
 }
