@@ -1,7 +1,7 @@
 {
   "name": "camp-reenbit",
   "version": "0.1.0",
-  "homepage": "https://github.com/VladaBoiko/camp-reenbit/",
+  "homepage": "https://vladaboiko.github.io/camp-reenbit/",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.6",
