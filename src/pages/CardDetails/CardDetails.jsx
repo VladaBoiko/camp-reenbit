@@ -20,10 +20,11 @@ import {
 } from './CardDetails.styled';
 export default function CardDetail() {
   const { id } = useParams();
+  console.log(id);
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/';
   const dispatch = useDispatch();
-  const { item } = useSelector(getCharacterById);
+
   useEffect(() => {
     if (id === '') {
       return;
@@ -31,6 +32,7 @@ export default function CardDetail() {
     dispatch(fetchCharacterById(id));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
+  const { item } = useSelector(getCharacterById);
   let imgPath = null;
   if (!item.image) {
     imgPath =
