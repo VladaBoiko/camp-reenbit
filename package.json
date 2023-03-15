@@ -1,9 +1,10 @@
 {
-  "name": "camp-reenbit",
+  "name": "react-homework-template",
   "version": "0.1.0",
-  "homepage": "https://vladaboiko.github.io/camp-reenbit/",
   "private": true,
+  "homepage": "https://vladaboiko.github.io/camp-reenbit/",
   "dependencies": {
+    "@testing-library/jest-dom": "^5.16.3",
     "@reduxjs/toolkit": "^1.8.6",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -23,7 +24,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint:js": "eslint src/**/*.{js,jsx}"
   },
   "eslintConfig": {
     "extends": [

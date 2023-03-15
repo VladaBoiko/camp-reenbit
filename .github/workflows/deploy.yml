@@ -3,8 +3,6 @@ name: Build and deploy to GitHub Pages
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
 
 jobs:
   build-and-deploy:
@@ -16,7 +14,9 @@ jobs:
       - name: Install, lint, build 🔧
         run: |
           npm install
+          npm run lint:js
           npm run build
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
