@@ -1,8 +1,8 @@
-import { useParams, Outlet, useLocation } from "react-router-dom";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getCharacterById } from "../../redux/selectors";
-import { fetchCharacterById } from "../../redux/operations";
+import { useParams, Outlet, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCharacterById } from '../../redux/selectors';
+import { fetchCharacterById } from '../../redux/operations';
 import {
   Box,
   Wrapper,
@@ -17,15 +17,15 @@ import {
   Item,
   SpanTitle,
   SpanText,
-} from "./CardDetails.styled";
+} from './CardDetails.styled';
 export default function CardDetail() {
   const { id } = useParams();
   const location = useLocation();
-  const backLinkHref = location.state?.from ?? "/";
+  const backLinkHref = location.state?.from ?? '/';
   const dispatch = useDispatch();
   const { item } = useSelector(getCharacterById);
   useEffect(() => {
-    if (id === "") {
+    if (id === '') {
       return;
     }
     dispatch(fetchCharacterById(id));
@@ -33,7 +33,7 @@ export default function CardDetail() {
   let imgPath = null;
   if (!item.image) {
     imgPath =
-      "https://www.shutterstock.com/image-vector/no-image-available-vector-hand-260nw-745639717.jpg";
+      'https://www.shutterstock.com/image-vector/no-image-available-vector-hand-260nw-745639717.jpg';
   }
   if (item.image) {
     imgPath = `${item.image}`;
