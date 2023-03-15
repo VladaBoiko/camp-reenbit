@@ -2,7 +2,7 @@
   "name": "react-homework-template",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://vladaboiko.github.io/camp-reenbit/",
+  "homepage": "https://vladaboiko.github.io/camp-reenbit",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@reduxjs/toolkit": "^1.8.6",
