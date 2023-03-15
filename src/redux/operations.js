@@ -13,7 +13,6 @@ export const fetchCharacters = createAsyncThunk(
     }
   }
 );
-
 export const fetchCharactersByName = createAsyncThunk(
   "characters/fetchAllByName",
 
