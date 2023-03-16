@@ -20,7 +20,6 @@ import {
 } from './CardDetails.styled';
 export default function CardDetail() {
   const { id } = useParams();
-  console.log(id);
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/';
   const dispatch = useDispatch();
