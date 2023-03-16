@@ -1,16 +1,16 @@
-import { Form, Input, Button, Box, Icon } from "./FilterForm.styled";
-import { useSelector } from "react-redux";
-import { getFilter } from "../../redux/selectors";
-import { useDispatch } from "react-redux";
-import { addFilter } from "../../redux/charactersSlice";
+import { Form, Input, Button, Box, Icon } from './FilterForm.styled';
+import { useSelector } from 'react-redux';
+import { getFilter } from '../../redux/selectors';
+import { useDispatch } from 'react-redux';
+import { addFilter } from '../../redux/additionalSlices';
 
 export const SearchForm = () => {
   const filter = useSelector(getFilter);
   const dispatch = useDispatch();
-  const changeFilter = (e) => {
+  const changeFilter = e => {
     dispatch(addFilter(e.currentTarget.value));
   };
-  const formSubmit = (e) => {
+  const formSubmit = e => {
     e.preventDefault();
   };
   return (

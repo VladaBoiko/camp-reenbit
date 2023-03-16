@@ -1,14 +1,14 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 import {
   fetchCharacters,
   fetchCharactersByName,
   fetchCharacterById,
-} from "./operations";
-const charactersInitialState = {
-  filter: "",
-  page: 1,
-};
-const handlePending = (state) => {
+} from './operations';
+// const charactersInitialState = {
+//   filter: "",
+//   page: 1,
+// };
+const handlePending = state => {
   state.isLoading = true;
 };
 const handleRejected = (state, action) => {
@@ -16,7 +16,7 @@ const handleRejected = (state, action) => {
   state.error = action.payload;
 };
 const charactersSlice = createSlice({
-  name: "characters",
+  name: 'characters',
   initialState: { items: [], isLoading: false, maxPage: 1, error: null },
   extraReducers: {
     [fetchCharacters.pending]: handlePending,
@@ -38,7 +38,7 @@ const charactersSlice = createSlice({
   },
 });
 const characterByIdSlice = createSlice({
-  name: "characterById",
+  name: 'characterById',
   initialState: { item: [], isLoading: false, error: null },
   extraReducers: {
     [fetchCharacterById.pending]: handlePending,
@@ -51,40 +51,40 @@ const characterByIdSlice = createSlice({
     },
   },
 });
-const filterSlice = createSlice({
-  name: "filter",
-  initialState: charactersInitialState,
-  reducers: {
-    addFilter: {
-      reducer(state, action) {
-        state.filter = action.payload;
-      },
-    },
-  },
-});
-const pageSlice = createSlice({
-  name: "page",
-  initialState: charactersInitialState,
-  reducers: {
-    nextPage: {
-      reducer(state) {
-        state.page = state.page + 1;
-      },
-    },
-    prevPage: {
-      reducer(state) {
-        if (state.page === 1) {
-          return;
-        }
-        state.page = state.page - 1;
-      },
-    },
-  },
-});
+// const filterSlice = createSlice({
+//   name: "filter",
+//   initialState: charactersInitialState,
+//   reducers: {
+//     addFilter: {
+//       reducer(state, action) {
+//         state.filter = action.payload;
+//       },
+//     },
+//   },
+// });
+// const pageSlice = createSlice({
+//   name: "page",
+//   initialState: charactersInitialState,
+//   reducers: {
+//     nextPage: {
+//       reducer(state) {
+//         state.page = state.page + 1;
+//       },
+//     },
+//     prevPage: {
+//       reducer(state) {
+//         if (state.page === 1) {
+//           return;
+//         }
+//         state.page = state.page - 1;
+//       },
+//     },
+//   },
+// });
 
 export const charactersReducer = charactersSlice.reducer;
 export const characterByIdReducer = characterByIdSlice.reducer;
-export const { addFilter } = filterSlice.actions;
-export const filterReducer = filterSlice.reducer;
-export const { nextPage, prevPage } = pageSlice.actions;
-export const pageReducer = pageSlice.reducer;
+// export const { addFilter } = filterSlice.actions;
+// export const filterReducer = filterSlice.reducer;
+// export const { nextPage, prevPage } = pageSlice.actions;
+// export const pageReducer = pageSlice.reducer;

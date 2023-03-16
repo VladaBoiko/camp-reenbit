@@ -1,12 +1,8 @@
-import { configureStore } from "@reduxjs/toolkit";
-import {
-  charactersReducer,
-  filterReducer,
-  characterByIdReducer,
-  pageReducer,
-} from "./charactersSlice";
-import { persistStore, persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage";
+import { configureStore } from '@reduxjs/toolkit';
+import { charactersReducer, characterByIdReducer } from './charactersSlice';
+import { filterReducer, pageReducer } from './additionalSlices';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 import {
   FLUSH,
   REHYDRATE,
@@ -14,17 +10,17 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-} from "redux-persist";
+} from 'redux-persist';
 
 const persistConfig = {
-  key: "filter, page",
+  key: 'filter, page',
   storage,
-  whitelist: ["filter", "page"],
+  whitelist: ['filter', 'page'],
 };
 const persistPageConfig = {
-  key: "page",
+  key: 'page',
   storage,
-  whitelist: ["page"],
+  whitelist: ['page'],
 };
 const persistedFilter = persistReducer(persistConfig, filterReducer);
 const persistedPage = persistReducer(persistPageConfig, pageReducer);
@@ -35,7 +31,7 @@ export const store = configureStore({
     page: persistedPage,
     characterById: characterByIdReducer,
   },
-  middleware: (getDefaultMiddleware) =>
+  middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
